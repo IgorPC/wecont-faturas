@@ -74,7 +74,6 @@ Todas as rotas devem ser enviadas com o Header <strong>Accept application/json</
  <strong>(POST) /bill</strong> => Insere uma nova fatura
  <p>Parametros</p>
  <ul>
-    <li>user_id</li>
     <li>due (YYYY-MM-DD)</li>
     <li>url</li>
  </ul>
