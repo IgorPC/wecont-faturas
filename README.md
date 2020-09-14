@@ -26,15 +26,37 @@ Para acessar as rotas protegidas com JWT deve-se enviar o Header Authorization c
 Todas as rotas devem ser enviadas com o Header <strong>Accept application/json</strong>.
 
 ## Rotas
+ 
+ <hr>
+ 
+ <strong>(POST) /login</strong> => Valida o email e senha do usuario e retorna o token para acesso das demais rotas
+ <p>Parametros</p>
+ <ul>
+    <li>email</li>
+    <li>password</li>
+ </ul>
+ 
+ <hr>
+ 
+ <strong>(GET) /generate-adm-user</strong> => Cadastra o usuario adminstrador caso o mesmo não esteja cadastrado
+ 
+ <hr>
 
- <strong>/login</strong> => Valida o email e senha do usuario e retorna o token para acesso das demais rotas
+ <strong>(POST) /user</strong> => Cadastra um novo usuario no sistema (So pode ser feito utilizando um token gerado pelo ADM)
+ <p>Parametros</p>
+ <ul>
+    <li>email</li>
+    <li>password</li>
+    <li>name</li>
+ </ul>
+ 
+ <hr>
 
+ <strong>(GET) /user</strong> => Retorna os dados do usuario autenticado (A partir do token)
+ <p>Parametros</p>
+ 
+ <hr>
 
-'/generate-adm-user'
-
-'/user'
-
-'/user'
 '/user/{id}'
 '/user/{id}'
 '/bill'
