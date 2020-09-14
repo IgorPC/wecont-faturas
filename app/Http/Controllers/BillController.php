@@ -46,10 +46,6 @@ class BillController extends Controller
     {
         $owner = (new JwtGenerate())->getOwnerToken($request);
 
-        if($request->user_id != $owner){
-            return response()->json(['ERROR' => ['MESSAGE' => "THIS USER DON'T HAVE PERMISSION TO ACCESS THIS DATA"]], 403);
-        }
-
         $due = date($request->due);
         $now = date('Y-m-d');
 
@@ -61,7 +57,7 @@ class BillController extends Controller
 
         $bill = $this->bill->create(
             [
-                'user_id' => $request->user_id,
+                'user_id' => $owner,
                 'status' => $status,
                 'due' => $due,
                 'url' => $request->url

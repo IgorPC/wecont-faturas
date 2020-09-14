@@ -56,7 +56,7 @@
         <p class="lead">Esse projeto foi desenvolvido para a segunda fase do processo seletivo para desenvolvedor BackEnd da We Cont.</p>
         <hr class="my-4">
         <p>Abaixo estará descrito as rotas, seus parametros e retornos.</p>
-        <a class="btn btn-outline-dark float-left" href="#" role="button">Código no GitHub <i class="fab fa-github"></i> </a>
+        <a class="btn btn-outline-dark float-left" href="https://github.com/IgorPC/wecont-faturas" __target="blank" role="button">Código no GitHub <i class="fab fa-github"></i> </a>
         <button class="btn btn-outline-info float-right" data-toggle="modal" data-target="#exampleModal" role="button">Informações Importantes <i class="fas fa-info-circle"></i> </button>
     </div>
 
@@ -86,7 +86,7 @@
                     <p>Todas as requisições devem ter o <strong>Header</strong> Accept: application/json</p>
                     <hr>
                     <p>Para informações mais detalhadas sobre cada rota, acesse a documentação disponivel no <a
-                            href="#">GitHub</a>.</p>
+                            href="https://github.com/IgorPC/wecont-faturas">GitHub</a>.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -335,8 +335,7 @@
                         <div class="col-md-6">
                             <h4>Campos: </h4>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">user_id</li>
-                                <li class="list-group-item">due</li>
+                                <li class="list-group-item">due (YYYY-MM-DD)</li>
                                 <li class="list-group-item">url</li>
                             </ul>
                         </div>
