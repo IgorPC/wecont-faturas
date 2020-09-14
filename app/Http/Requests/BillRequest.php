@@ -14,7 +14,6 @@ class BillRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => 'required',
             'due' => 'required',
             'url' => 'required|unique:bills'
         ];
