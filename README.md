@@ -25,7 +25,7 @@ Com exeção da rota de login, todas as rotas da API são protegidas por autenti
 Para acessar as rotas protegidas com JWT deve-se enviar o Header Authorization com o conteudo <strong>Bearer {token}</strong>.
 Todas as rotas devem ser enviadas com o Header <strong>Accept application/json</strong>.
 
-## Rotas
+<h2>Rotas</h2>
  
  <hr>
  
@@ -56,26 +56,70 @@ Todas as rotas devem ser enviadas com o Header <strong>Accept application/json</
  <p>Parametros</p>
  
  <hr>
+ 
+ <strong>(DELETE) /user/{id}</strong> => Remove um usuario e suas faturas (Caso existam faturas)
+ <p>Parametros</p>
+ 
+ <hr>
+ 
+ <strong>(PUT) /user/{id}</strong> => Atualiza o nom e/ou a senha do usuario
+ <p>Parametros</p>
+ <ul>
+    <li>password</li>
+    <li>name</li>
+ </ul>
+ 
+ <hr>
+ 
+ <strong>(POST) /bill</strong> => Insere uma nova fatura
+ <p>Parametros</p>
+ <ul>
+    <li>user_id</li>
+    <li>due (YYYY-MM-DD)</li>
+    <li>url</li>
+ </ul>
+ 
+ <hr>
+ 
+ <strong>(GET) /bill</strong> => Retorna todas as faturas do usuario autenticado (A partir do token)
 
-'/user/{id}'
-'/user/{id}'
-'/bill'
-'/bill'
-'/bill/{id}'
-'/bill/{id}'
-'/bill/{id}'
-/approve-payment/{id}'
+ <hr>
+ 
+ <strong>(PUT) /bill/{id}</strong> => Atualiza o vencimento e/ou a url da fatura desejada
+ <p>Parametros</p>
+ <ul>
+    <li>due (YYYY-MM-DD)</li>
+    <li>url</li>
+ </ul>
+ 
+ <hr>
+ 
+ <strong>(GET) /bill/{id}</strong> => Retorna os dados de determinada fatura passada na url
+ 
+ <hr>
+ 
+ <strong>(DELETE) /bill/{id}</strong> => Remove determinada fatura passada na url
+ 
+ <hr>
+ 
+ <strong>(PUT) /approve-payment</strong> => Aprova o pagamento (3) de determinada fatura passada na url se a mesma tiver o status como aberta (1) e ou atrasada(2)
+ 
+ <hr>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Regras importantes a serem consideradas
 
-## Code of Conduct
+<ul>
+    <li>Apenas o usuario autenticado pelo token pode ter acesso e modificar dados pertinentes a sua conta, bem como as proprias faturas.</li>
+    <li>As faturas possuem três tipos de status, 1 -> Aberta, 2 -> Atrasada e 3 -> Paga.</li>
+    <li>A unica forma de alterar o status de uma fatura é mudando seu vencimento (due) ou aprovando seu pagamento pela rota apropriada.</li>
+    <li>Os dados de acesso da conta ADM são: <strong>Email: adm@adm.com | senha: 123456</strong>.</li>
+    <li>O email é unico e imutavel.</li>
+    <li>A url da fatura é unica, mas pode ser alterada desde que não coincida com outra url cadastrada no banco.</li>
+</ul>    
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Hospedagem
 
-## Security Vulnerabilities
+A aplicação se encontra hospedada na heroku para ser consumida. Foi criada uma documentação com mais detalhes visuais e mais simples de ser interpretada nesse link <a href ="#">Documentação</a>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+A url base para a API hospedada na heroku é: 
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
