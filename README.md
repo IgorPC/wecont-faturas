@@ -119,7 +119,7 @@ Todas as rotas devem ser enviadas com o Header <strong>Accept application/json</
 
 ## Hospedagem
 
-A aplicação se encontra hospedada na heroku para ser consumida. Foi criada uma documentação com mais detalhes visuais e mais simples de ser interpretada nesse link <a href ="#">Documentação</a>
+A aplicação se encontra hospedada na heroku para ser consumida. Foi criada uma documentação com mais detalhes visuais e mais simples de ser interpretada nesse link <a href ="https://wecont-faturas.herokuapp.com/">Documentação</a>
 
-A url base para a API hospedada na heroku é: 
+A url base para a API hospedada na heroku é: https://wecont-faturas.herokuapp.com/api
 
