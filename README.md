@@ -15,24 +15,34 @@ O projeto foi desenvolvido utilizando a versão 7 do Laravel e o PHP na versão 
     <li> Utilizei o Eloquent pois quis mostrar a familiaridade para com o Framework e como ele minimiza as querys sql. </li>
 </ul>
 
-## Laravel Sponsors
+## Instalação do projeto em localhost
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Para instalar o projeto, basta clonar esse repositorio e execultar o comando <strong>php artisan migrate</strong>. O comando vai instalar as dependencias necessarias e deixar o projeto pronto para ser usado. Um detalhe importante é que não será necessario criar um <strong>.env</strong> pois eu irei disponibilizar um com o JWT_SECRET, as unicas coisas que precisaram ser alteradas no <strong>.env</strong> serão os dados de acesso ao Banco de dados (Caso necessario).
 
-### Premium Partners
+### Autenticação e acesso a rotas
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+Com exeção da rota de login, todas as rotas da API são protegidas por autenticação JWT, inclusive a rota de criação de usuarios. Por esse motivo foi disponibilizada uma rota para a criação do usuario ADM (/generate-adm-user). Essa rota cadastra o usuario ADM caso o mesmo não tenha sido criado.
+Para acessar as rotas protegidas com JWT deve-se enviar o Header Authorization com o conteudo <strong>Bearer {token}</strong>.
+Todas as rotas devem ser enviadas com o Header <strong>Accept application/json</strong>.
 
-## Contributing
+## Rotas
+
+ <strong>/login</strong> => Valida o email e senha do usuario e retorna o token para acesso das demais rotas
+
+
+'/generate-adm-user'
+
+'/user'
+
+'/user'
+'/user/{id}'
+'/user/{id}'
+'/bill'
+'/bill'
+'/bill/{id}'
+'/bill/{id}'
+'/bill/{id}'
+/approve-payment/{id}'
 
 Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
