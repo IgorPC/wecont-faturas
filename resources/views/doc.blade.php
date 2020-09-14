@@ -56,7 +56,7 @@
         <p class="lead">Esse projeto foi desenvolvido para a segunda fase do processo seletivo para desenvolvedor BackEnd da We Cont.</p>
         <hr class="my-4">
         <p>Abaixo estará descrito as rotas, seus parametros e retornos.</p>
-        <a class="btn btn-outline-dark float-left" href="https://github.com/IgorPC/wecont-faturas" __target="blank" role="button">Código no GitHub <i class="fab fa-github"></i> </a>
+        <a class="btn btn-outline-dark float-left" href="https://github.com/IgorPC/wecont-faturas" role="button">Código no GitHub <i class="fab fa-github"></i> </a>
         <button class="btn btn-outline-info float-right" data-toggle="modal" data-target="#exampleModal" role="button">Informações Importantes <i class="fas fa-info-circle"></i> </button>
     </div>
 
